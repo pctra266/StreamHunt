@@ -8,14 +8,11 @@ type YouTubeVideo = {
 };
 
 function App() {
-  const [query, setQuery] = useState('');
   const [results, setResults] = useState<YouTubeVideo[]>([]);
 
   const searchVideos = async () => {
     try {
-      const res = await axios.get(`http://localhost:8080/api/youtube/search`, {
-        params: { q: query },
-      });
+      const res = await axios.get(`http://localhost:8080/api/youtube/search`);
       setResults(res.data);
     } catch (err) {
       console.error('Search failed:', err);
@@ -27,18 +24,11 @@ function App() {
       <h1 className="text-2xl font-bold mb-4">🎬 YouTube Video Search</h1>
 
       <div className="flex gap-2 mb-6">
-        <input
-          type="text"
-          placeholder="Search..."
-          className="border p-2 flex-1"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
         <button
           className="bg-blue-500 text-white px-4 py-2 rounded"
           onClick={searchVideos}
         >
-          Search
+          getRandomVideo
         </button>
       </div>
 

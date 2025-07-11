@@ -16,8 +16,8 @@ public class YouTubeController {
 
     @CrossOrigin(origins = "http://localhost:5173") // or 3000 depending on your port
     @GetMapping("/search")
-    public List<YoutubeVideo> search(@RequestParam String q) {
-        return youTubeService.searchVideos(q);
+    public List<YoutubeVideo> search() {
+        return youTubeService.searchVideos();
     }
 
 }
