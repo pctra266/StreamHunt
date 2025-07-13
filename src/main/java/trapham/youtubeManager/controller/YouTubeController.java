@@ -13,11 +13,11 @@ public class YouTubeController {
     public YouTubeController(YouTubeService youTubeService) {
         this.youTubeService = youTubeService;
     }
-
-    @CrossOrigin(origins = "http://localhost:5173") // or 3000 depending on your port
-    @GetMapping("/search")
-    public List<YoutubeVideo> search() {
-        return youTubeService.searchVideos();
+    
+    @CrossOrigin(origins = "http://localhost:5173")
+    @GetMapping("/getApiKey")
+    public String getApiKey() {
+        return youTubeService.getApiKey();
     }
 
 }
