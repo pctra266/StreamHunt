@@ -6,8 +6,8 @@ import {searchVideos} from '../service/axios'
 
 const HomePage = () => {
     const [listVideos, setlistVideos] = useState<YouTubeVideo[]>([]);
-    const searchVideo = async () => {
-        const res = await searchVideos(); 
+    const searchVideo = async (topic:string) => {
+        const res = await searchVideos(topic); 
       
         if (!res || !Array.isArray(res)) {
           console.error('Invalid response from API:', res);
@@ -24,10 +24,10 @@ const HomePage = () => {
       };
 
   return (
-    <>
+    <div className="min-h-screen bg-neutral-950 text-white">
     <SearchBox searchVideo={searchVideo}></SearchBox>
     <ListVideo listVideos={listVideos}></ListVideo>
-    </>
+    </div>
   )
 }
 

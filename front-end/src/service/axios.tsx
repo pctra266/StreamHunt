@@ -1,10 +1,10 @@
 import axios from 'axios';
 
 
-export const searchVideos = async () => {
+export const searchVideos = async (topic:string) => {
     const apiKey = await getApiKey();
     const BASE_URL = "https://www.googleapis.com/youtube/v3/search";
-    const Url = buildYouTubeUrl(apiKey,"neuro", BASE_URL)
+    const Url = buildYouTubeUrl(apiKey,topic, BASE_URL)
     try {
       const res = await axios.get(`${Url}`);
       return res.data.items;
@@ -27,7 +27,7 @@ function buildYouTubeUrl(apiKey: string, topic: string, BASE_URL:string): string
     url.searchParams.set("q", topic);
     url.searchParams.set("type", "video");
     url.searchParams.set("videoDuration", "medium");
-    url.searchParams.set("maxResults", "10");
+    url.searchParams.set("maxResults", "1000");
     url.searchParams.set("order", "rating");
     url.searchParams.set("key", apiKey);
     return url.toString();

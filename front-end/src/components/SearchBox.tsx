@@ -1,24 +1,32 @@
-import React from 'react'
+import {useRef} from "react"
 
 interface SearchBoxProps{
-    searchVideo: ()=>void
+    searchVideo: (value:string)=>void
 }
 
 const SearchBox = ({searchVideo}:SearchBoxProps) => {
+    const inputRef = useRef<HTMLInputElement>(null); 
+
+    const handleClick = () => {
+      const value = inputRef.current?.value || "";
+      searchVideo(value);        
+    };
   return (
     <div className="p-6 max-w-2xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">🎬 YouTube Video Search</h1>
-
-      <div className="flex gap-2 mb-6">
+      <div className="flex gap-2 mb-6 justify-center">
+      <input
+          ref={inputRef}
+          type="text"
+          placeholder="Enter topic..."
+          className="px-3 py-2 rounded text-white w-full max-w-sm border border-white"
+        />
         <button
-          className="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer"
-          onClick={searchVideo}
+          className="bg-black text-white px-4 py-2 rounded cursor-pointer hover:bg-neutral-700"
+          onClick={handleClick}
         >
-          getRandomVideo
+          Search
         </button>
       </div>
-
-      
     </div>
   )
 }

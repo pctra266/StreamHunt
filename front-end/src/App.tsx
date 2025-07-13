@@ -2,7 +2,7 @@
 import HomePage from './screens/HomePage';
 function App() {
   return (
-    <HomePage></HomePage>
+      <HomePage></HomePage>
   );
 }
 
