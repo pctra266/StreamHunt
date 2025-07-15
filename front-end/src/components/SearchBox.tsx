@@ -21,7 +21,7 @@ const SearchBox = ({searchVideo}:SearchBoxProps) => {
           className="px-3 py-2 rounded text-white w-full max-w-sm border border-white"
         />
         <button
-          className="bg-black text-white px-4 py-2 rounded cursor-pointer hover:bg-neutral-700"
+          className="bg-black text-white hover:bg-neutral-700  cursor-pointer px-4 py-2 rounded "
           onClick={handleClick}
         >
           Search

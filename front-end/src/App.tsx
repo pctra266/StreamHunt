@@ -1,8 +1,8 @@
-
-import HomePage from './screens/HomePage';
+import { RouterProvider } from "react-router-dom";
+import {router} from './routers/router'
 function App() {
   return (
-      <HomePage></HomePage>
+    <RouterProvider router={router} />
   );
 }
 

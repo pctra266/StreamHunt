@@ -13,7 +13,7 @@ public class YouTubeController {
     public YouTubeController(YouTubeService youTubeService) {
         this.youTubeService = youTubeService;
     }
-    
+
     @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/getApiKey")
     public String getApiKey() {
