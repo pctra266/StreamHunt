@@ -1,8 +1,7 @@
-import React from 'react'
 
 const Podcast = () => {
   return (
-    <div>asdfasfasfsadfasd</div>
+    <div>podcast</div>
   )
 }
 

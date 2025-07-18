@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Home, Music, Menu, Podcast } from "lucide-react";
+import { Home, Music, Menu, Podcast, LogIn, List } from "lucide-react";
 import {Link} from "react-router-dom"
 interface SidebarProps {
   isOpen: boolean;
@@ -34,6 +34,8 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
                 <Link to="/"><SidebarItem icon={<Home />} label="Home" /></Link>
                 <Link to="/music"><SidebarItem icon={<Music />} label="Music" /></Link>
                 <Link to="/podcast"><SidebarItem icon={<Podcast />} label="Podcast" /></Link>
+                <Link to="/login"><SidebarItem icon={<LogIn />} label="Login" /></Link>
+                <Link to="/list"><SidebarItem icon={<List />} label="PlayList" /></Link>
               </nav>
             </div>
           </motion.div>
